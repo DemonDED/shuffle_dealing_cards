@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-
+void shuffle(int wDeck[][13]);
 
 int main() {
 	const char *suit[4] = {"Hearts", "Diamonds", "Clubs", "Spades"};
@@ -12,7 +12,23 @@ int main() {
 
 	srand(time(0));
 
-
+	
 
 	return 0;
 }
+
+void shuffle(int wDeck[][13]) {
+	int row;
+	int column;
+	int card;
+
+	for (card = 1; card <= 52; card++) {
+		do {
+			row = rand() % 4;
+			column = rand() % 13;
+		} while (wDeck[row][column] != 0);
+
+		wDeck[row][column] = card;
+	}
+}
+
