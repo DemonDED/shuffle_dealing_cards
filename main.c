@@ -3,7 +3,7 @@
 #include <time.h>
 
 void shuffle(int wDeck[][13]);
-void deal(const int wDeck[][13], const char *wFace, const char *wSuit[]);
+void deal(const int wDeck[][13], const char *wFace[], const char *wSuit[]);
 
 int main() {
 	const char *suit[4] = {"Hearts", "Diamonds", "Clubs", "Spades"};
@@ -13,7 +13,8 @@ int main() {
 
 	srand(time(0));
 
-	
+	shuffle(deck);
+	deal(deck, face, suit);
 
 	return 0;
 }
